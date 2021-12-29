@@ -1,0 +1,11 @@
+<a [routerLink]="['/home']">Home</a>&nbsp;&nbsp;
+<a [routerLink]="['/product']" [queryParams]="{id: 1}">Product</a>&nbsp;&nbsp;
+<a [routerLink]="['/productNew', 1]">Product new</a>&nbsp;&nbsp;
+<input type="button" value="Details" (click)="toProductDetails()">&nbsp;&nbsp;
+
+<a [routerLink]="[{outlets: {auxRoute: 'chat'}}]">StartChat</a>&nbsp;&nbsp;
+<a [routerLink]="[{outlets: {primary: 'home', auxRoute: 'chat'}}]">StartHomeChat</a>&nbsp;&nbsp;
+<a [routerLink]="[{outlets: {auxRoute: null}}]">StopChat</a>
+
+<router-outlet></router-outlet>
+<router-outlet name="auxRoute"></router-outlet>

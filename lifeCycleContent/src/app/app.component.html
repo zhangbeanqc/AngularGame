@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <h2>I amd parent</h2>
+  <div>This div is in parent component</div>
+  <!-- <ng-content> can only be used to embed content in parent -->
+  <app-child>
+    <div class="header">Header div is projected to child component, title is '{{ title }}'</div>
+    <div class="footer">Footer div is projected to child component</div>
+  </app-child>
+</div>
+
+<!-- This is another way besides <ng-content> to embed content in child component -->
+<!-- But innerHTML is only for browser, but ng-content is platform unrelated -->
+<!-- <ng-content> can appear in multiple places in child component -->
+<div [innerHTML]="divContent"></div>
+<br/>
+{{ message }}
+<hr/>
+<a [routerLink]="['/child']">child</a>
+<br/>
+<a [routerLink]="['/child1']">child1</a>
+<router-outlet></router-outlet>

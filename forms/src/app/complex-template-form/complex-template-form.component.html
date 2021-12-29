@@ -1,0 +1,22 @@
+<hr/>
+<!-- Disable browser validator so required is an angular directive -->
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value, myForm.valid)" novalidate>
+
+  <div [hidden]="userNameValid || userNameUntouched">
+    <div [hidden]="!myForm.form.hasError('required', 'userName')" class="alarmMsg">User name is required!</div>
+  </div>
+  <div>UserName:<input ngModel required name="userName" type="text" (focusout)="onUserNameFocusOut(myForm)"></div>
+
+  <div [hidden]="mobilePristine || mobileValid">
+    <div [hidden]="!myForm.form.hasError('mobile', 'mobile')">Please input legal mobile number</div>
+  </div>
+  <div>MobileNumber:<input ngModel udValidatorMobile name="mobile" type="number" (input)="onMobileInput(myForm)"></div>
+
+  <div ngModelGroup="passwordGroup" udValidatorEqual>
+    <div [hidden]="!myForm.form.hasError('minlength', ['passwordGroup','password'])" class="alarmMsg">Min length of password must be 6!</div>
+    <div>Password:<input ngModel name="password"minlength="6" type="password"></div>
+    <div>Confirm:<input ngModel name="passwordConfirm" type="password"></div>
+  </div>
+  <div [hidden]="!myForm.form.hasError('equal', 'passwordGroup')">{{ myForm.form.getError('equal', 'passwordGroup')?.notEqualDesc }}</div>
+  <button type="submit">Register</button>
+</form>

@@ -1,0 +1,80 @@
+<p>
+  <button (click)="doOnClick($event)" >Click Me</button>
+</p>
+<p>
+  <img [src]="imgUrl">
+</p>
+<!-- Equivalent to this -->
+<p>
+  <img src="{{ imgUrl }}">
+</p>
+
+<!-- value of disabled is not important -->
+<!-- Although disabled is false, this button is still disabled -->
+<!-- But, we can use Dom attribute to set disabled = false to enable the button -->
+<input value="Tom" (input)="doOnInput($event)">&nbsp;
+<button (dblclick)="disableButton($event)">Click Me</button>&nbsp;
+<button disabled="false">Disable Button</button>&nbsp;
+
+
+<!-- Dom <==> Html -->
+<!-- colspan (HTML only) -->
+<!-- textContent (DOM only) -->
+
+<table>
+  <tr>
+     <!-- failed because colspan isn't a DOM attribute to <td></td> -->
+     <!-- <td colspan="{{ 1 + 1 }}">Item1</td> -->
+     <td [attr.colspan]="size">Item</td>
+  </tr>
+</table>
+
+<div class="a b c">Lesson 1000</div>
+<br/>
+
+<!-- class -->
+<!-- finally class="d a b c" -->
+<div class="d" [class]="divClass">Lesson 1000</div>
+<br/>
+<div class="a b" [class.e]="isBig">Lesson 2000</div>
+<br/>
+<div [ngClass]="divNgClass">Lesson 3000</div>
+<br/>
+
+<!-- style -->
+<div [style.color]="isDev ? 'red': 'blue'">Lesson 4000 color changes</div>
+<br/>
+<div [style.font-size.px]="isDev ? 10: 30">Lesson 5000 size changes</div>
+<br/>
+<!-- Not change after timeout -->
+<div [ngStyle]="divStyle">Lesson 6000 not change after timeout</div>
+<br/>
+<!-- Both change after timeout -->
+<div [ngStyle]="divNewStyle">Lesson 7000 change after timeout</div>
+<br/>
+<div [ngStyle]="{'font-style': canSave ? 'italic' : 'normal'}">Lesson 8000 change after timeout</div>
+<br/>
+
+<!-- two direction binding -->
+<input [value]="name" (input)="doInput($event)">
+{{ name }}
+<br/>
+<!-- ngModel must be used against tag related to forms -->
+<!-- Also don't forget to import FormsModule -->
+<input [(ngModel)]="newName">
+{{ newName }}
+<br/>
+<input (keyup)="onKey(myField.value)" #myField> {{ "KeyUp" }}
+<br/>
+<input [formControl]="searchInput"> {{ "StockInfo" }}
+
+<br/>
+<!-- pipe in angular -->
+<!-- date, uppercase, lowercase, number, async -->
+<p>My Birthday is {{ birthday | date: 'yyyy-MM-dd HH:mm:ss' | uppercase }}</p>
+<!-- 1.2-4 means min 2 digits max 4 digits after point, 1 digit before point -->
+<p>PI is {{ pi | number: '1.2-4'}}</p>
+<!-- user define pipe -->
+<!-- ng g pipe pipe_name -->
+<p>Mutiple 5 by 3 is {{ 5 | multiple: 3}}</p>
+<p>Mutiple 5 by 1 is {{ 5 | multiple }}</p>

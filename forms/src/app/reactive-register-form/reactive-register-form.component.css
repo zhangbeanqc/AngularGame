@@ -1,0 +1,12 @@
+.alarmMsg {
+ color: red;
+}
+
+/*.ng-invalid {
+  border: 1px solid red
+} */
+
+.hasError {
+  background-color: antiquewhite;
+}
+

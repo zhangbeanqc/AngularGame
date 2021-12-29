@@ -1,0 +1,5 @@
+<app-child #child1></app-child>
+<app-child #child2></app-child>
+<button (click)="child2.greeting('Jerry')">ClickMe</button>
+<!-- ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked. -->
+{{ message }}

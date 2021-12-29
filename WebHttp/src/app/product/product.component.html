@@ -1,0 +1,24 @@
+<div>
+  Products:
+</div>
+
+<div>
+  Use Subscribe Observable in TS
+</div>
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.title }}
+  </li>
+</ul>
+
+<div>
+  Use Async Pipe in Template
+</div>
+<ul>
+  <li *ngFor="let product of newProducts | async">
+    {{ product.title }}
+  </li>
+</ul>
+
+
+

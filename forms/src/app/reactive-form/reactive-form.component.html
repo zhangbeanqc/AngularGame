@@ -1,0 +1,31 @@
+<!-- FormControl
+     FormGroup
+     FormArray -->
+<hr/>
+<h3>----- Reactive Form Example -----</h3>
+<!-- [formControl] can't be used in [formGroup] -->
+User Name:<input [formControl]="userName"><br/>
+
+<!-- Any command that looks like xxxName must use string link to a model instead of binding symbole [] -->
+
+<!-- [formGroup] binds this form to FormGroup object in model -->
+<form [formGroup]="formModel" (submit)="onSubmit()">
+  <!-- If we want to put a formControl in [formGroup], we must use formControlName instead of [formControl] -->
+  Mobile:<input formControlName="mobile">
+  <!-- Use a new formGroup with formGroupName in [formGroup] -->
+  <div formGroupName="dateRange">
+    Start Date:<input formControlName="from" type="date"><br/>
+    End Date:<input formControlName="to" type="date">
+  </div>
+  <div>
+    <ul formArrayName="emails">
+      <li *ngFor="let e of getControls(); let i=index;">
+        <input type="text" [formControlName]="i">
+      </li>
+    </ul>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="button" (click)="addEmail()">Add Email</button>
+  </div>
+  <br/>
+  <button type="submit">Save</button>
+</form>

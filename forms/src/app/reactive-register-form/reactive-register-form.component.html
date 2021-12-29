@@ -1,0 +1,40 @@
+<hr/>
+<h3>----- Reactive Register Form Example -----</h3>
+<form [formGroup]="formModel" (ngSubmit)="onRegister()">
+  <!--  Only when input box "userName" is clicked then loses focus, the validation is triggered -->
+  <!--  .valid is true only when all the validation rules of "userName" pass-->
+  <!--  .untouched is true when the input box is not ever touched -->
+  <div [hidden]="formModel.get('userName')?.valid || formModel.get('userName')?.untouched" >
+    <div [hidden]="!formModel.hasError('required', 'userName')" class="alarmMsg">User name is required!</div>
+    <div [hidden]="!formModel.hasError('minlength', 'userName')" class="alarmMsg">Length of user name must between 6 and 10!</div>
+    <div [hidden]="!formModel.hasError('maxlength', 'userName')" class="alarmMsg">Length of user name must between 6 and 10!</div>
+  </div>
+  <div>User Name:<input [class.hasError]="formModel.get('userName')!.invalid && formModel.get('userName')!.touched" type="text" formControlName="userName"></div>
+
+<!--  <div [hidden]="this.formModle.get('userName')!.valid" class="alarmMsg">Illegal user name input!</div>-->
+
+  <!--  .pristine is true when value of the input box is changed -->
+  <div [hidden]="formModel.get('mobile')!.valid || formModel.get('mobile')!.pristine" >
+    <div [hidden]="!formModel.hasError('mobile', 'mobile')">Please input legal mobile number</div>
+  </div>
+
+  <!--  This message will show up before asynchronous validation completes-->
+  <div [hidden]="!formModel.get('mobile')!.pending">
+    Mobile is being validated asynchronously
+  </div>
+
+  <div>Mobile:<input type="text" formControlName="mobile"></div>
+
+  <div formGroupName="passwordGroup">
+    Password:<input formControlName="password" type="password">
+    <!-- Must pass an array because password is in a group -->
+    <div [hidden]="!formModel.hasError('minlength', ['passwordGroup','password'])" class="alarmMsg">Min length of password must be 6!</div>
+    <br/>PasswordConfirm:<input formControlName="passwordConfirm" type="password">
+  </div>
+  <div [hidden]="!formModel.hasError('minlength', 'userName')" class="alarmMsg">Length of user name must between 6 and 10!</div>
+<!--  <div [hidden]="!formModle.hasError('consistent', 'passwordGroup')" class="alarmMsg">Password is not matched!</div>-->
+  <div [hidden]="!formModel.hasError('consistent', 'passwordGroup')" class="alarmMsg">{{ formModel.getError('consistent', 'passwordGroup')?.inconsistenceDesc }}</div>
+  <button type="submit">Register</button>
+</form>
+{{ formModel.status }}
+

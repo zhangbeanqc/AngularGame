@@ -1,0 +1,22 @@
+<div>
+  I am parent component
+</div>
+<div>
+  <input placeholder="Please input stock code" [(ngModel)]="stock">
+</div>
+<app-order [stockCode]="stock" [amount]="100"></app-order>
+<hr/>
+<!-- priceChange is used to receive event emitted from child component,
+     event type depends on the parameter of emit() method in child component,
+     since we are using emit(priceQuote), we know that the event type is PriceQuote -->
+<app-price-quote (priceChange)="priceQuoteHandler($event)" (buyStock)="buyStockHandler($event)"></app-price-quote>
+<hr>
+<div>
+  This is outside of price quote, stock code is {{ priceQuote.stockCode }},
+  stock price is {{ priceQuote.lastPrice | number: '2.2-2' }}
+</div>
+<!-- As a parent of price-quote and stock-order, app-component acts as a middle-man, it receives the event emitted from price-quote
+     and passes it to another child by property binding -->
+<!-- This is the path: price-quote -> buyStock -> buyStockHandler($event) -> priceQuoteStatic -> priceQuote -> stock-order -->
+<!-- If 2 components have no shared parent, they have to use a service as the middle-man to complete this communication -->
+<app-stock-order [priceQuote]="priceQuoteStatic"></app-stock-order>

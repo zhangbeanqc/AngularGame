@@ -1,0 +1,61 @@
+<hr/>
+<h3>----- ngNoForm Example -----</h3>
+<form action="/regist" method="post" ngNoForm>
+  <div>UserName:<input type="text"></div>
+  <div>Phone:<input type="text"></div>
+  <div>PostCode:<input type="number" min="100000" max="999999"></div>
+  <div>Password:<input type="password"></div>
+  <div>Confirm:<input type="password"></div>
+  <!--  Normal action is taken because of ngNoForm is used.
+        If we remove ngNoForm, this form will be also taken over by Angular -->
+  <button type="submit">Register</button>
+</form>
+
+<!-- ngForm ===> FormGroup-->
+<!-- ngModelGroup ===> FormGroup-->
+<!-- ngModel ===> FormControl-->
+
+<hr/>
+<h3>----- ngForm/ngModel Example -----</h3>
+<form #myForm1="ngForm" action="/regist" method="post">
+  <div>UserName:<input ngModel name="userName" type="text"></div>
+  <div>Phone:<input ngModel name="phone"  type="text"></div>
+  <div>PostCode:<input ngModel name="postCode"  type="number"></div>
+  <div>Password:<input ngModel name="password"  type="password"></div>
+  <div>Confirm:<input ngModel name="confirmPassword"  type="password"></div>
+  <button type="submit">Register</button>
+</form>
+<div>
+  {{ myForm1.value | json }}
+</div>
+
+<hr/>
+<h3>----- ngSubmit Example -----</h3>
+<form #myForm2="ngForm" (ngSubmit)="onSubmit(myForm2.value)">
+  <!--  ngModel must be used with name property -->
+  <div>UserName:<input #userName2 ngModel name="userName" type="text"></div>
+  <!--  #phone and #phone2="ngModel" both can obtain the value in phone input box -->
+  <div>Phone:<input #phone2 ngModel name="phone" type="text"></div>
+  <div>PostCode:<input #postCode2="ngModel" ngModel name="postCode" type="number"></div>
+  <div>Password:<input #password2="ngModel" ngModel name="password" type="password"></div>
+  <div>Confirm:<input #confirmPassword2="ngModel" ngModel name="confirmPassword" type="password"></div>
+  <button type="submit">Register</button>
+</form>
+{{ userName2.value }}&nbsp;&nbsp;{{ phone2.value }}&nbsp;&nbsp;{{ postCode2.value }}&nbsp;&nbsp;
+{{ password2.value }}&nbsp;&nbsp;{{ confirmPassword2.value }}&nbsp;&nbsp;
+
+<hr/>
+<h3>----- ngModleGroup Example -----</h3>
+<form #myForm3="ngForm" (ngSubmit)="onSubmit(myForm3.value)">
+  <!--  To put these 2 fields in a group -->
+  <div ngModelGroup="userBasicInfo">
+    <div>UserName:<input #userName3 ngModel name="userName" type="text"></div>
+    <div>Phone:<input #phone3 ngModel name="phone" type="text"></div>
+  </div>
+  <div>PostCode:<input #postCode3="ngModel" ngModel name="postCode" type="number"></div>
+  <div>Password:<input #password3="ngModel" ngModel name="password" type="password"></div>
+  <div>Confirm:<input #confirmPassword3="ngModel" ngModel name="confirmPassword" type="password"></div>
+  <button type="submit">Register</button>
+</form>
+{{ myForm3.value | json }}&nbsp;&nbsp;{{ userName3.value }}
+

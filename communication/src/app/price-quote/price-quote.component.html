@@ -1,0 +1,10 @@
+<div>
+  <h3>This is Stock Quote component</h3>
+</div>
+<div>
+  Stock Code: {{ stockCode }}<br/>
+  Stock Price: {{ price | number: '2.2-2'}}
+</div>
+<div>
+  <input type="button" value="Buy" (click)="buyStock($event)">
+</div>

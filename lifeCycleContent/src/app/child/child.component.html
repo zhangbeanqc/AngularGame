@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <h2>I am child component</h2>
+
+<!--  User select to distinguish different content in parent -->
+  <ng-content select=".header"></ng-content>
+
+  <div>This div is in child component</div>
+
+<!--  User select to distinguish different content in parent -->
+  <ng-content select=".footer"></ng-content>
+</div>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e8dd307f-b081-4b74-b039-734961eddf65" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="21tXYeREe8tMcaY4jQDf82wGH70" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Study\angular\WebServer\client" />
+      <recent name="D:\Study\angular\server" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.web_socket_server.js">
+    <configuration name="auction_server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/build/auction_server.js" working-dir="$PROJECT_DIR$/build">
+      <method v="2" />
+    </configuration>
+    <configuration name="hello_server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/build/hello_server.js" working-dir="$PROJECT_DIR$/build">
+      <method v="2" />
+    </configuration>
+    <configuration name="web_socket_server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/build/web_socket_server.js" working-dir="$PROJECT_DIR$/build">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.web_socket_server.js" />
+        <item itemvalue="Node.js.auction_server.js" />
+        <item itemvalue="Node.js.hello_server.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e8dd307f-b081-4b74-b039-734961eddf65" name="Default Changelist" comment="" />
+      <created>1638761405245</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638761405245</updated>
+      <workItem from="1638761406296" duration="2086000" />
+      <workItem from="1638763523149" duration="82000" />
+      <workItem from="1638763607828" duration="1561000" />
+      <workItem from="1638765397473" duration="8331000" />
+      <workItem from="1639609899255" duration="11422000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/server/hello_server.js" />
+      </list>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="954" y="334" key="FileChooserDialogImpl" timestamp="1639269890639">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="954" y="334" key="FileChooserDialogImpl/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1639269890639" />
+    <state width="2528" height="357" key="GridCell.Tab.0.bottom" timestamp="1639680669212">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2528" height="357" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1639680669212" />
+    <state width="2528" height="357" key="GridCell.Tab.0.center" timestamp="1639680669211">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2528" height="357" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1639680669211" />
+    <state width="2528" height="357" key="GridCell.Tab.0.left" timestamp="1639680669211">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2528" height="357" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1639680669211" />
+    <state width="2528" height="357" key="GridCell.Tab.0.right" timestamp="1639680669212">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2528" height="357" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1639680669212" />
+    <state x="531" y="170" key="SettingsEditor" timestamp="1638764114341">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="531" y="170" key="SettingsEditor/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1638764114341" />
+  </component>
+</project>
